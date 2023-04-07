@@ -48,3 +48,5 @@ const user: User = {
   languages: languages,
   techSkills: technologies,
 };
+
+export default user;
