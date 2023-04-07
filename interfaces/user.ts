@@ -7,6 +7,7 @@ import {
   SocialLink,
   Stats,
   Technology,
+  Visibility,
   WorkExperience,
 } from './sections';
 
@@ -25,6 +26,7 @@ export default interface User {
   dateOfBirth: string;
   gender: string;
   socialLinks: SocialLink[];
+  visibility: Visibility;
   stats: Stats;
   projects: Project[];
   playgrounds: Playground[];

@@ -11,6 +11,12 @@ export interface Stats {
   karmaPoints: number;
 }
 
+export interface Visibility {
+  followersAndFollowing: boolean;
+  xp: boolean;
+  achievements: boolean;
+}
+
 export interface Project {
   title: string;
   image: string;
