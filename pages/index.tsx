@@ -1,7 +1,8 @@
+import User from '@/interfaces/user';
 import useSWR from 'swr';
 
 export default function Home() {
-  const { data, error } = useSWR('/api/user', (url: string) =>
+  const { data, error } = useSWR<User, Error>('/api/user', (url: string) =>
     fetch(url).then((res) => res.json())
   );
 
@@ -11,7 +12,7 @@ export default function Home() {
   return (
     <main>
       <h1>Hi</h1>
-      <p>{data.fullName}</p>
+      <p>{data.about}</p>
     </main>
   );
 }
