@@ -1,3 +1,5 @@
+import useSWR, { Fetcher, preload } from 'swr';
+
 import User from '@/interfaces/user';
 
 import Header from '@/components/Profile/Header/Header';
@@ -5,11 +7,11 @@ import Tabs from '@/components/Profile/Header/Tabs';
 import Error from '@/components/Standalone/Error';
 import { LoadingButton } from '@/components/Standalone/Buttons';
 
-import useSWR, { Fetcher } from 'swr';
-
 function Profile() {
   const fetcher: Fetcher<User> = (url: string) =>
     fetch(url).then((res) => res.json());
+
+  preload('/api/user', fetcher);
 
   const {
     data: user,
