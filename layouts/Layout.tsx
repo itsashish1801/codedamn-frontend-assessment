@@ -17,7 +17,21 @@ function Layout({ children }: { children: ReactElement }) {
     isLoading,
   } = useSWR<Navbar, Error>('/api/navbar', fetcher);
 
-  if (!navbarDetail) return;
+  if (!navbarDetail)
+    return (
+      <>
+        <Head>
+          <title>Codedamn Frontend assessment</title>
+          <meta
+            name='description'
+            content='Codedamn Frontend assessment by Ashish Sharma'
+          />
+          <meta name='viewport' content='width=device-width, initial-scale=1' />
+          <link rel='icon' href='/codedamn.svg' />
+        </Head>
+        <Container className='max-w-5xl'>{children}</Container>
+      </>
+    );
 
   return (
     <>
