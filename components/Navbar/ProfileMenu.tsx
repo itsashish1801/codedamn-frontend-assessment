@@ -1,35 +1,32 @@
-import { Fragment, useState } from 'react';
+import { Fragment } from 'react';
 import { Menu, Transition } from '@headlessui/react';
 
 import {
-  ChevronDownIcon,
-  AcademicCapIcon,
-  CodeBracketIcon,
-  UserIcon,
+  CogIcon,
+  ArrowRightOnRectangleIcon,
 } from '@heroicons/react/24/outline';
 
-function SearchBoxMenu() {
-  const [selectedItem, setSelectedItem] = useState('Courses');
+import AvatarComponent from '../Standalone/Avatar';
+import { Avatar } from '@/interfaces/avatar';
+import Link from 'next/link';
 
+function ProfileMenu({ image, imageAlt, level, size = 'big' }: Avatar) {
   const items = [
-    { text: 'Courses', icon: AcademicCapIcon },
-    { text: 'Projects', icon: CodeBracketIcon },
-    { text: 'Users', icon: UserIcon },
+    { text: 'Update Profile', icon: CogIcon, href: '/update-profile' },
+    { text: 'Log out', icon: ArrowRightOnRectangleIcon, href: '#' },
   ];
 
   return (
     <div>
       <Menu as='div' className='relative inline-block text-left'>
-        <div>
-          <Menu.Button className='inline-flex items-center w-full px-2 py-1 text-sm rounded-lg group bg-zinc-100 text-zinc-600 hover:bg-zinc-200 hover:text-zinc-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-zinc-500'>
-            {selectedItem}
-            <ChevronDownIcon
-              className='h-3.5 w-3.5 text-zinc-500 ml-1.5 group-hover:text-zinc-600'
-              aria-hidden='true'
-            />
-          </Menu.Button>
-        </div>
-
+        <Menu.Button>
+          <AvatarComponent
+            image={image}
+            imageAlt={imageAlt}
+            level={level}
+            size='small'
+          />
+        </Menu.Button>
         <Transition
           as={Fragment}
           enter='transition ease-out duration-100'
@@ -44,15 +41,15 @@ function SearchBoxMenu() {
               <div className='px-1 py-1' key={item.text}>
                 <Menu.Item>
                   {({ active }) => (
-                    <button
-                      onClick={() => setSelectedItem(item.text)}
+                    <Link
+                      href={item.href}
                       className={`${
                         active ? 'bg-zinc-200' : ''
                       } group text-zinc-900 flex w-full items-center rounded-lg px-3 py-2 text-sm`}
                     >
                       <item.icon className='w-4 h-4 mr-1.5 text-inherit' />
                       <span>{item.text}</span>
-                    </button>
+                    </Link>
                   )}
                 </Menu.Item>
               </div>
@@ -64,4 +61,4 @@ function SearchBoxMenu() {
   );
 }
 
-export default SearchBoxMenu;
+export default ProfileMenu;

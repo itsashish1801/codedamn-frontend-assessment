@@ -6,6 +6,7 @@ import SearchBox from './SearchBox';
 import Streak from './Streak';
 import Notification from './Notification';
 import Avatar from '../Standalone/Avatar';
+import ProfileMenu from './ProfileMenu';
 
 function Navbar({
   currentstreak,
@@ -27,7 +28,7 @@ function Navbar({
             <Streak currentStreak={currentstreak} />
             <Notification notificationCount={notificationCount} />
           </div>
-          <Avatar
+          <ProfileMenu
             image={image}
             imageAlt={imageAlt}
             level={level}

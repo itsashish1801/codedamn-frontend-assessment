@@ -26,7 +26,7 @@ function Projects({ projects }: { projects: Project[] }) {
 
 export function ProjectCard({ title, image, technologies }: Project) {
   return (
-    <div className='p-4 rounded-lg bg-zinc-50 ring-1 ring-inset ring-zinc-100'>
+    <div className='p-4 rounded-lg cursor-pointer bg-zinc-50 ring-1 ring-inset ring-zinc-100 hover:bg-zinc-100'>
       <Image
         src={image}
         alt={title}

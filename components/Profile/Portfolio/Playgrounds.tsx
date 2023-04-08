@@ -36,7 +36,7 @@ function PlaygroundCard({
   friends,
 }: Playground) {
   return (
-    <div className='flex items-start gap-4 p-4 rounded-lg bg-zinc-50 ring-1 ring-inset ring-zinc-100'>
+    <div className='flex items-start gap-4 p-4 rounded-lg cursor-pointer bg-zinc-50 ring-1 ring-inset ring-zinc-100 hover:bg-zinc-100'>
       <Image
         src={technology.image}
         alt={technology.name}

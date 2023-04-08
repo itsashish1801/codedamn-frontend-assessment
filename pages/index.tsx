@@ -23,7 +23,7 @@ export default function Home() {
           >
             Github repo
           </a>
-          <a href='#' className={baseStyle}>
+          <a href='https://itsashishsharma.in' className={baseStyle}>
             Contact
           </a>
         </div>
