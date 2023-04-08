@@ -1,3 +1,11 @@
+export default interface BasicDetails {
+  name: string;
+  bio: string;
+  location: string;
+  isPro: boolean;
+  lookingForJob: boolean;
+}
+
 export interface SocialLink {
   name: string;
   image: string;
@@ -72,4 +80,18 @@ export interface Language {
 export interface Friend {
   name: string;
   image: string;
+}
+
+export interface SectionHeader {
+  title: string;
+  linkText?: string;
+  href?: string;
+}
+
+export interface Navbar {
+  currentstreak: number;
+  notificationCount: number;
+  image: string;
+  imageAlt: string;
+  level: number;
 }
