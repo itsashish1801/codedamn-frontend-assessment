@@ -21,7 +21,7 @@ const BasicDetails = ({
 
       <p className='mt-1.5 text-zinc-500'>{bio}</p>
 
-      <p className='inline-flex items-center mt-1.5 text-zinc-400'>
+      <p className='inline-flex items-center mt-1.5 text-zinc-500'>
         <MapPinIcon className='w-4 h-4' />
         <span className='ml-1'>{location}</span>
       </p>

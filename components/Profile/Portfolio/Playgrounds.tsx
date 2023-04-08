@@ -46,7 +46,7 @@ function PlaygroundCard({
       />
 
       <div>
-        <h5 className='text-lg font-semibold'>{title}</h5>
+        <h4 className='text-lg font-semibold'>{title}</h4>
         <div className='flex items-center gap-2 mt-1 text-zinc-500'>
           <CategoryTag category={technology.name} />
           <div className='w-1 h-1 rounded-full bg-zinc-600' />

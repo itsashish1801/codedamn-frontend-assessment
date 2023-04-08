@@ -39,7 +39,7 @@ function CertificateCard({ title, issuedOn, technology, href }: Certificate) {
         width={40}
         height={40}
       />
-      <h5 className='mt-6 font-semibold'>{title}</h5>
+      <h4 className='mt-6 font-semibold'>{title}</h4>
       <p className='mt-1 text-sm text-zinc-500'>
         Issued on {formatDate(issuedOn, 'long')}
       </p>

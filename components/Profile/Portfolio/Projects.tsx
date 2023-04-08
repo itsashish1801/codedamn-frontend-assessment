@@ -34,7 +34,7 @@ export function ProjectCard({ title, image, technologies }: Project) {
         height={170}
         className='rounded shadow-sm ring-1 ring-zinc-200'
       />
-      <h5 className='mt-5 text-lg font-bold'>{title}</h5>
+      <h4 className='mt-5 text-lg font-bold'>{title}</h4>
       <div className='flex items-center gap-2 mt-2 text-zinc-500'>
         <CategoryTag
           category={technologies.at(0)?.name!}

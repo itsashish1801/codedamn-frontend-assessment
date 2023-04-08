@@ -27,6 +27,7 @@ export function ButtonIcon({ Icon }: Icon) {
   return (
     <button
       onClick={() => setBookmark(!bookmark)}
+      aria-label='Bookmark User'
       className='p-3 rounded-lg bg-zinc-100 text-zin-900 hover:bg-zinc-200 focus:outline-none focus:ring-2 focus:ring-zinc-500'
     >
       <Icon
