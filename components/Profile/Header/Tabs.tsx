@@ -10,24 +10,26 @@ const Tabs = ({ user }: { user: User }) => {
   return (
     <Tab.Group as='div' className='mt-10'>
       <Tab.List className='flex gap-6 px-6 py-2 border rounded-lg'>
-        <Tab className='rounded-lg focus:outline-none focus:ring-1 focus:ring-indigo-700'>
+        <Tab className='rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400'>
           {({ selected }) => (
-            <Tag
-              text='Portfolio'
-              className={`text-sm ${
-                selected ? 'bg-indigo-200 text-indigo-800' : ''
+            <div
+              className={`px-3 py-2 text-sm font-semibold rounded-lg text-zinc-900 bg-zinc-100 ${
+                selected ? 'bg-indigo-100 text-indigo-800' : ''
               }`}
-            />
+            >
+              Portfolio
+            </div>
           )}
         </Tab>
-        <Tab className='rounded-lg focus:outline-none focus:ring-1 focus:ring-indigo-700'>
+        <Tab className='rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400'>
           {({ selected }) => (
-            <Tag
-              text='Resume'
-              className={`text-sm ${
-                selected ? 'bg-indigo-200 text-indigo-800' : ''
+            <div
+              className={`px-3 py-2 text-sm font-semibold rounded-lg text-zinc-900 bg-zinc-100 ${
+                selected ? 'bg-indigo-100 text-indigo-800' : ''
               }`}
-            />
+            >
+              Resume
+            </div>
           )}
         </Tab>
       </Tab.List>
