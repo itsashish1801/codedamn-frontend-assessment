@@ -17,7 +17,7 @@ function ProfileMenu({ image, imageAlt, level, size = 'big' }: Avatar) {
   ];
 
   return (
-    <div>
+    <div className='translate-y-0.5'>
       <Menu as='div' className='relative inline-block text-left'>
         <Menu.Button>
           <AvatarComponent

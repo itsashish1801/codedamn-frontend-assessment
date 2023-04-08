@@ -22,7 +22,7 @@ function Navbar({
           <h1 className='text-2xl font-bold'>codedamn</h1>
         </Link>
 
-        <div className='flex gap-9'>
+        <div className='flex items-center gap-9'>
           <SearchBox />
           <div className='flex items-center gap-9'>
             <Streak currentStreak={currentstreak} />
