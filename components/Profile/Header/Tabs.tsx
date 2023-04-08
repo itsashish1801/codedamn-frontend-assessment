@@ -16,7 +16,7 @@ const Tabs = ({ user }: { user: User }) => {
               text='Portfolio'
               className={`text-sm ${
                 selected
-                  ? 'bg-indigo-50 text-indigo-700'
+                  ? '!bg-indigo-100 !text-indigo-700'
                   : 'bg-zinc-100 text-zinc-900'
               }`}
             />
@@ -28,7 +28,7 @@ const Tabs = ({ user }: { user: User }) => {
               text='Resume'
               className={`text-sm ${
                 selected
-                  ? 'bg-indigo-50 text-indigo-700'
+                  ? '!bg-indigo-100 !text-indigo-700'
                   : 'bg-zinc-100 text-zinc-900'
               }`}
             />

@@ -1,5 +1,6 @@
 import { Button } from '@/interfaces/buttons';
 import { Icon } from '@/interfaces/helpers';
+import { useState } from 'react';
 
 export function Button({
   children,
@@ -21,9 +22,16 @@ export function Button({
 }
 
 export function ButtonIcon({ Icon }: Icon) {
+  const [bookmark, setBookmark] = useState(false);
+
   return (
-    <button className='p-3 rounded-lg bg-zinc-100 text-zin-900 hover:bg-zinc-200 focus:outline-none focus:ring-2 focus:ring-zinc-500'>
-      <Icon className='w-4 h-4 stroke-2' />
+    <button
+      onClick={() => setBookmark(!bookmark)}
+      className='p-3 rounded-lg bg-zinc-100 text-zin-900 hover:bg-zinc-200 focus:outline-none focus:ring-2 focus:ring-zinc-500'
+    >
+      <Icon
+        className={`w-4 h-4 stroke-2 ${bookmark ? 'fill-slate-900' : ''}`}
+      />
     </button>
   );
 }
