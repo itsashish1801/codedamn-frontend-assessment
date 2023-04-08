@@ -8,6 +8,15 @@ import Container from '@/components/Standalone/Container';
 import NavbarComponent from '@/components/Navbar/Navbar';
 
 function Layout({ children }: { children: ReactElement }) {
+  const navbarData: Navbar = {
+    currentstreak: 0,
+    level: 0,
+    notificationCount: 0,
+    imageAlt: 'Dummy Image of a Person',
+    image:
+      'https://res.cloudinary.com/dpoftt83y/image/upload/v1680852539/codedamn-frontend-assessment/shubham_nb7jfa.webp',
+  };
+
   const fetcher: Fetcher<Navbar> = (url: string) =>
     fetch(url).then((res) => res.json());
 
@@ -15,7 +24,9 @@ function Layout({ children }: { children: ReactElement }) {
     data: navbarDetail,
     error,
     isLoading,
-  } = useSWR<Navbar, Error>('/api/navbar', fetcher);
+  } = useSWR<Navbar, Error>('/api/navbar', fetcher, {
+    fallbackData: navbarData,
+  });
 
   if (!navbarDetail)
     return (
