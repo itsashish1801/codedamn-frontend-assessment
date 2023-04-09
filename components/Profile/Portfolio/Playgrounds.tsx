@@ -29,7 +29,7 @@ function Playgrounds({ playgrounds }: { playgrounds: Playground[] }) {
   );
 }
 
-function PlaygroundCard({
+export function PlaygroundCard({
   title,
   lastModified,
   technology,
