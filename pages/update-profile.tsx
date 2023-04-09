@@ -12,7 +12,6 @@ import {
 } from '@/components/Standalone/Inputs';
 import { Button, FileInput } from '@/components/Standalone/Buttons';
 
-import dummy from '../public/dummy.webp';
 import Selectbox from '@/components/Form/Selectbox';
 import VisibilityToggler from '@/components/Form/VisibilityToggler';
 
@@ -32,8 +31,6 @@ const ProfileFormSchema = Yup.object().shape({
     .min(2, 'Too Short!')
     .max(50, 'Too Long!')
     .required('This is a required field'),
-
-  about: Yup.string().required(),
 });
 
 function UpdateProfile() {
@@ -58,8 +55,10 @@ function UpdateProfile() {
         <Form className='w-full px-16'>
           <div className='flex items-center gap-6'>
             <Image
-              className='h-[4.5rem] w-[4.5rem] rounded-full'
-              src={dummy}
+              width={72}
+              height={72}
+              className='rounded-full'
+              src='https://res.cloudinary.com/dpoftt83y/image/upload/v1680852539/codedamn-frontend-assessment/shubham_nb7jfa.webp'
               alt='Picture of A person'
             />
             <FileInput />
