@@ -1,11 +1,18 @@
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 
 import { Project } from '@/interfaces/sections';
 
 import SectionHeader from '@/components/Standalone/SectionHeader';
 import { CategoryTag } from '@/components/Standalone/Tags';
+import { useState } from 'react';
 
 function Projects({ projects }: { projects: Project[] }) {
+  const [selected, setSelected] = useState([]);
+
+  const route = useRouter();
+  const isDisplayingAsInput = route.asPath === '/update-portfolio';
+
   return (
     <section className='mt-12'>
       <SectionHeader title='Projects' linkText='Create new project' href='#' />

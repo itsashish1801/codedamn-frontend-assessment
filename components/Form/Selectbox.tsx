@@ -41,6 +41,7 @@ function Selectbox({ options, label }: { options: string[]; label: string }) {
             <Combobox.Button className='absolute inset-y-0 right-0 flex items-center pr-2'>
               <ChevronUpDownIcon
                 className='w-5 h-5 text-zinc-400'
+                aria-label='Select dropdown'
                 aria-hidden='true'
               />
             </Combobox.Button>

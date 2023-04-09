@@ -109,7 +109,7 @@ function UpdateProfile() {
             />
           </div>
           <div className='mt-10'>
-            <h3 className='text-xl font-bold'>Section Visibility</h3>
+            <h2 className='text-xl font-bold'>Section Visibility</h2>
             <p className='mt-1 text-zinc-500'>
               Select which sections and content should show on your profile
               page.

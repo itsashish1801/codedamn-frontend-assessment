@@ -52,11 +52,13 @@ export function TextAreaInput({ placeholder, label, error }: Input) {
 }
 
 export function DateInput({ label }: Label) {
+  const id = convertToId(label);
+
   return (
     <div>
       <Label label={label} />
       <div className='mt-1'>
-        <input type='date' name={label} id={label} className={baseStyles} />
+        <input type='date' name={id} id={id} className={baseStyles} />
       </div>
     </div>
   );
