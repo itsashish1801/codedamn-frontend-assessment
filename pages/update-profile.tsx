@@ -57,6 +57,7 @@ function UpdateProfile() {
             <Image
               width={72}
               height={72}
+              priority
               className='rounded-full'
               src='https://res.cloudinary.com/dpoftt83y/image/upload/v1680852539/codedamn-frontend-assessment/shubham_nb7jfa.webp'
               alt='Picture of A person'
