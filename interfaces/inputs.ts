@@ -1,5 +1,6 @@
 export interface Input extends Label {
   placeholder: string;
+  error: string;
 }
 
 export interface Label {

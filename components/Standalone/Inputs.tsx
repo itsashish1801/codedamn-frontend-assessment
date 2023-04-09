@@ -1,8 +1,9 @@
 import { Input, Label, SelectInput } from '@/interfaces/inputs';
 import { convertToId } from '@/utils/helperFunctions';
+import { Field } from 'formik';
 
 const baseStyles =
-  'block w-full text-sm py-3.5 px-3 rounded-lg border-zinc-200 focus:border-zinc-600 focus:ring-zinc-600 placeholder:text-zinc-500';
+  'block w-full text-sm py-3.5 px-3 rounded-lg border border-zinc-200 focus:outline-none focus:border-zinc-600 focus:ring-1 focus:ring-zinc-600 placeholder:text-zinc-500';
 
 export function Label({ label }: Label) {
   return (
@@ -12,21 +13,21 @@ export function Label({ label }: Label) {
   );
 }
 
-export function TextInput({ placeholder, label }: Input) {
+export function TextInput({ placeholder, label, error }: Input) {
   const id = convertToId(label);
 
   return (
     <div>
       <Label label={label} />
       <div className='mt-1'>
-        <input
-          type='text'
+        <Field
           name={id}
           id={id}
           placeholder={placeholder}
-          className={baseStyles}
+          className={`${baseStyles} ${error ? 'border-red-600' : ''}`}
         />
       </div>
+      <div className='mt-1 text-sm text-red-600'>{error}</div>
     </div>
   );
 }
@@ -44,33 +45,6 @@ export function TextAreaInput({ placeholder, label }: Input) {
           placeholder={placeholder}
           className={`${baseStyles} resize-none`}
         ></textarea>
-      </div>
-    </div>
-  );
-}
-
-export function SelectInput({ label, options, placeholder }: SelectInput) {
-  const id = convertToId(label);
-
-  return (
-    <div>
-      <Label label={label} />
-      <div className='mt-1'>
-        <select
-          name={id}
-          id={id}
-          className={baseStyles}
-          defaultValue={placeholder}
-        >
-          <option value={placeholder} disabled defaultValue={placeholder}>
-            {placeholder}
-          </option>
-          {options.map((option) => (
-            <option value={option.toLowerCase()} key={option}>
-              {option}
-            </option>
-          ))}
-        </select>
       </div>
     </div>
   );

@@ -6,10 +6,12 @@ export function Button({
   children,
   variant = 'primary',
   clickHandler,
+  type = 'button',
 }: Button) {
   return (
     <button
       onClick={clickHandler}
+      type={type}
       className={`py-2.5 px-4 rounded-lg text-sm font-semibold focus:outline-none focus:ring-2 ${
         variant === 'primary'
           ? 'bg-indigo-600 text-white hover:bg-indigo-700 focus:ring-offset-1 focus:ring-indigo-300 '
