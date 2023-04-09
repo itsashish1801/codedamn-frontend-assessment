@@ -2,7 +2,7 @@ import { Fragment, useState } from 'react';
 import { Combobox, Transition } from '@headlessui/react';
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid';
 
-import { Label } from '../Standalone/Inputs';
+import { convertToId } from '@/utils/helperFunctions';
 
 function Selectbox({ options, label }: { options: string[]; label: string }) {
   const [selected, setSelected] = useState(options[0]);
@@ -20,8 +20,17 @@ function Selectbox({ options, label }: { options: string[]; label: string }) {
 
   return (
     <div>
-      <Label label={label} />
-      <Combobox value={selected} onChange={setSelected}>
+      <Combobox
+        value={selected}
+        onChange={setSelected}
+        name={convertToId(label)}
+      >
+        <Combobox.Label
+          htmlFor={convertToId(label)}
+          className='block text-sm font-semibold'
+        >
+          {label}
+        </Combobox.Label>
         <div className='relative mt-1'>
           <div className='relative w-full text-left cursor-default'>
             <Combobox.Input

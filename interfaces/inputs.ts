@@ -16,3 +16,8 @@ export interface VisibilityToggler extends Label {
   title: string;
   description: string;
 }
+
+export interface Toggler {
+  title: string;
+  label: string;
+}

@@ -1,95 +1,146 @@
 import { ReactElement } from 'react';
 import Image from 'next/image';
+import { Formik, Form } from 'formik';
+import * as Yup from 'yup';
 
 import Layout from '@/layouts/Layout';
 import LayoutWithSidebar from '@/layouts/LayoutWithSidebar';
-import me from '../public/me.webp';
 import {
   DateInput,
-  SelectInput,
   TextAreaInput,
   TextInput,
 } from '@/components/Standalone/Inputs';
-import VisibilityToggler from '@/components/Form/VisibilityToggler';
 import { Button, FileInput } from '@/components/Standalone/Buttons';
+
+import me from '../public/me.webp';
 import Selectbox from '@/components/Form/Selectbox';
+import VisibilityToggler from '@/components/Form/VisibilityToggler';
+
+interface ProfileForm {
+  displayname: string;
+  about: string;
+  profession: string;
+  dateofbirth: string;
+  gender: string;
+  showfollowers: boolean;
+  showxp: boolean;
+  showachievements: boolean;
+}
+
+const ProfileFormSchema = Yup.object().shape({
+  displayname: Yup.string()
+    .min(2, 'Too Short!')
+    .max(50, 'Too Long!')
+    .required('This is a required field'),
+
+  about: Yup.string().required(),
+});
 
 function UpdateProfile() {
+  const initialValues: ProfileForm = {
+    displayname: '',
+    about: '',
+    profession: 'Student',
+    dateofbirth: '',
+    gender: 'Male',
+    showfollowers: false,
+    showxp: false,
+    showachievements: false,
+  };
+
   return (
-    <form className='w-full px-16'>
-      <div className='flex items-center gap-6'>
-        <Image
-          priority
-          className='h-[4.5rem] w-[4.5rem] rounded-full'
-          src={me}
-          alt='Picture of Ashish'
-        />
-        <FileInput />
-        <Button variant='secondary'>Remove</Button>
-      </div>
+    <Formik
+      initialValues={initialValues}
+      onSubmit={(values) => console.log(values)}
+      validationSchema={ProfileFormSchema}
+    >
+      {({ errors, touched }) => (
+        <Form className='w-full px-16'>
+          <div className='flex items-center gap-6'>
+            <Image
+              priority
+              className='h-[4.5rem] w-[4.5rem] rounded-full'
+              src={me}
+              alt='Picture of Ashish'
+            />
+            <FileInput />
+            <Button variant='secondary'>Remove</Button>
+          </div>
 
-      <div className='flex flex-col gap-6 mt-10'>
-        <div>
-          <TextInput label='Display Name' placeholder='Ashish Sharma' />
-          <p className='mt-2 text-sm text-zinc-500'>
-            Name entered above will be used for all issued certificates
-          </p>
-        </div>
-        <TextAreaInput
-          label='About'
-          placeholder='Write something about yourself here.'
-        />
+          <div className='flex flex-col gap-6 mt-10'>
+            <div>
+              <TextInput
+                label='Display Name'
+                placeholder='Ashish Sharma'
+                error={
+                  errors.displayname && touched.displayname
+                    ? errors.displayname
+                    : ''
+                }
+              />
+              <p className='mt-2 text-sm text-zinc-500'>
+                Name entered above will be used for all issued certificates
+              </p>
+            </div>
 
-        <Selectbox
-          options={[
-            'Student',
-            'Designer',
-            'Frontend Developer',
-            'Backend Developer',
-            'Data Scientist',
-            'Other',
-          ]}
-          label='Profession'
-        />
+            <TextAreaInput
+              label='About'
+              placeholder='Write something about yourself here.'
+              error={errors.about && touched.about ? errors.about : ''}
+            />
 
-        <DateInput label='Date of birth' />
+            <Selectbox
+              options={[
+                'Student',
+                'Designer',
+                'Frontend Developer',
+                'Backend Developer',
+                'Data Scientist',
+                'Other',
+              ]}
+              label='Profession'
+            />
 
-        <Selectbox
-          options={['Male', 'Female', 'Custom', 'Rather not say']}
-          label='Gender'
-        />
-      </div>
+            <DateInput label='Date of Birth' />
 
-      <div className='mt-10'>
-        <h3 className='text-xl font-bold'>Section Visibility</h3>
-        <p className='mt-1 text-zinc-500'>
-          Select which sections and content should show on your profile page.
-        </p>
+            <Selectbox
+              options={['Male', 'Female', 'Custom', 'Rather not say']}
+              label='Gender'
+            />
+          </div>
+          <div className='mt-10'>
+            <h3 className='text-xl font-bold'>Section Visibility</h3>
+            <p className='mt-1 text-zinc-500'>
+              Select which sections and content should show on your profile
+              page.
+            </p>
 
-        <div className='flex flex-col gap-4 p-6 mt-6 rounded-2xl bg-zinc-50'>
-          <VisibilityToggler
-            title='Followers and following'
-            description='Shows your followers and the users you follow on codedamn'
-            label='Toggle followers and following visibility'
-          />
-          <VisibilityToggler
-            title='XP'
-            description='Shows the XP you have earned'
-            label='Toggle XP visibility'
-          />
-          <VisibilityToggler
-            title='Achievement badges'
-            description='Shows your relative percentile and proficiency'
-            label='Toggle achievement badges'
-          />
-        </div>
-      </div>
+            <div className='flex flex-col gap-4 p-6 mt-6 rounded-2xl bg-zinc-50'>
+              <VisibilityToggler
+                title='Followers and following'
+                description='Shows your followers and the users you follow on codedamn'
+                label='Toggle followers and following visibility'
+              />
+              <VisibilityToggler
+                title='XP'
+                description='Shows the XP you have earned'
+                label='Toggle XP visibility'
+              />
+              <VisibilityToggler
+                title='Achievement badges'
+                description='Shows your relative percentile and proficiency'
+                label='Toggle achievement badges'
+              />
+            </div>
+          </div>
 
-      <div className='flex justify-end gap-3 mt-10'>
-        <Button variant='secondary'>Cancel</Button>
-        <Button>Save changes</Button>
-      </div>
-    </form>
+          <div className='flex justify-end gap-3 mt-10'>
+            <Button variant='secondary'>Cancel</Button>
+            <Button>Save changes</Button>
+          </div>
+        </Form>
+      )}
+    </Formik>
   );
 }
 

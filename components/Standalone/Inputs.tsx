@@ -32,19 +32,20 @@ export function TextInput({ placeholder, label, error }: Input) {
   );
 }
 
-export function TextAreaInput({ placeholder, label }: Input) {
+export function TextAreaInput({ placeholder, label, error }: Input) {
   const id = convertToId(label);
 
   return (
     <div>
       <Label label={label} />
       <div className='mt-1'>
-        <textarea
+        <Field
+          as='textarea'
           name={id}
           id={id}
           placeholder={placeholder}
           className={`${baseStyles} resize-none`}
-        ></textarea>
+        />
       </div>
     </div>
   );
