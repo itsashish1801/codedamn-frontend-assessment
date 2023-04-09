@@ -6,7 +6,7 @@ import { Technology } from '@/interfaces/sections';
 import Layout from '@/layouts/Layout';
 import LayoutWithSidebar from '@/layouts/LayoutWithSidebar';
 import Error from '@/components/Standalone/Error';
-import { LoadingButton } from '@/components/Standalone/Buttons';
+import { Button, LoadingButton } from '@/components/Standalone/Buttons';
 import FormTechSkills from '@/components/Form/FormTechSkills';
 
 function UpdateResume() {
@@ -29,6 +29,11 @@ function UpdateResume() {
   return (
     <form className='px-16'>
       <FormTechSkills techSkills={technologies} />
+
+      <div className='flex justify-end gap-3 mt-10'>
+        <Button variant='secondary'>Cancel</Button>
+        <Button>Save changes</Button>
+      </div>
     </form>
   );
 }

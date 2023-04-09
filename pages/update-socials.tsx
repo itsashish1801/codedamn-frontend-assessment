@@ -53,39 +53,41 @@ function UpdateSocials() {
       }}
     >
       {({ errors, touched }) => (
-        <Form className='flex flex-col w-full gap-4 px-16'>
-          <TextInput
-            label='Github'
-            placeholder='Github profile URL'
-            error={errors.github && touched.github ? errors.github : ''}
-          />
-          <TextInput
-            label='Linkedin'
-            placeholder='Linkedin profile URL'
-            error={errors.linkedin && touched.linkedin ? errors.linkedin : ''}
-          />
-          <TextInput
-            label='Facebook'
-            placeholder='Facebook profile URL'
-            error={errors.facebook && touched.facebook ? errors.facebook : ''}
-          />
-          <TextInput
-            label='Instagram'
-            placeholder='Instagram profile URL'
-            error={
-              errors.instagram && touched.instagram ? errors.instagram : ''
-            }
-          />
-          <TextInput
-            label='Dribbble'
-            placeholder='Dribbble profile URL'
-            error={errors.dribbble && touched.dribbble ? errors.dribbble : ''}
-          />
-          <TextInput
-            label='Behance'
-            placeholder='Behance profile URL'
-            error={errors.behance && touched.behance ? errors.behance : ''}
-          />
+        <Form className='w-full px-16'>
+          <div className='flex flex-col gap-4'>
+            <TextInput
+              label='Github'
+              placeholder='Github profile URL'
+              error={errors.github && touched.github ? errors.github : ''}
+            />
+            <TextInput
+              label='Linkedin'
+              placeholder='Linkedin profile URL'
+              error={errors.linkedin && touched.linkedin ? errors.linkedin : ''}
+            />
+            <TextInput
+              label='Facebook'
+              placeholder='Facebook profile URL'
+              error={errors.facebook && touched.facebook ? errors.facebook : ''}
+            />
+            <TextInput
+              label='Instagram'
+              placeholder='Instagram profile URL'
+              error={
+                errors.instagram && touched.instagram ? errors.instagram : ''
+              }
+            />
+            <TextInput
+              label='Dribbble'
+              placeholder='Dribbble profile URL'
+              error={errors.dribbble && touched.dribbble ? errors.dribbble : ''}
+            />
+            <TextInput
+              label='Behance'
+              placeholder='Behance profile URL'
+              error={errors.behance && touched.behance ? errors.behance : ''}
+            />
+          </div>
 
           <div className='flex justify-end gap-3 mt-10'>
             <Button variant='secondary'>Cancel</Button>

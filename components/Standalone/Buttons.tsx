@@ -1,5 +1,5 @@
 import { Button } from '@/interfaces/buttons';
-import { Icon } from '@/interfaces/helpers';
+import { ClassName, Icon } from '@/interfaces/helpers';
 import { useState } from 'react';
 
 export function Button({
@@ -51,9 +51,9 @@ export function FileInput() {
   );
 }
 
-export function LoadingButton() {
+export function LoadingButton({ className }: ClassName) {
   return (
-    <div className='flex items-center justify-center h-screen'>
+    <div className={`absolute top-1/2 left-1/2 ${className}`}>
       <button
         disabled
         type='button'

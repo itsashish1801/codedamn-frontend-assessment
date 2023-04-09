@@ -20,7 +20,7 @@ function Profile() {
   } = useSWR<User, Error>('/api/user', fetcher);
 
   if (error) return <Error message={error.message} />;
-  if (isLoading) return <LoadingButton />;
+  if (isLoading) return <LoadingButton className='left-[42%]' />;
   if (!user)
     return <Error message='There is no such user matching your query.' />;
 

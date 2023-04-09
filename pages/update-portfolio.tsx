@@ -5,7 +5,7 @@ import Layout from '@/layouts/Layout';
 import LayoutWithSidebar from '@/layouts/LayoutWithSidebar';
 import { Playground, Project } from '@/interfaces/sections';
 import Error from '@/components/Standalone/Error';
-import { LoadingButton } from '@/components/Standalone/Buttons';
+import { Button, LoadingButton } from '@/components/Standalone/Buttons';
 import FormProject from '@/components/Form/FormProject';
 import FormPlayground from '@/components/Form/FormPlayground';
 
@@ -43,6 +43,11 @@ function UpdatePortfolio() {
     <form className='px-16'>
       <FormPlayground playgrounds={playgrounds} />
       <FormProject projects={projects} />
+
+      <div className='flex justify-end gap-3 mt-10'>
+        <Button variant='secondary'>Cancel</Button>
+        <Button>Save changes</Button>
+      </div>
     </form>
   );
 }
