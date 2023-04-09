@@ -12,7 +12,7 @@ import {
 } from '@/components/Standalone/Inputs';
 import { Button, FileInput } from '@/components/Standalone/Buttons';
 
-import me from '../public/me.webp';
+import dummy from '../public/dummy.webp';
 import Selectbox from '@/components/Form/Selectbox';
 import VisibilityToggler from '@/components/Form/VisibilityToggler';
 
@@ -58,10 +58,9 @@ function UpdateProfile() {
         <Form className='w-full px-16'>
           <div className='flex items-center gap-6'>
             <Image
-              priority
               className='h-[4.5rem] w-[4.5rem] rounded-full'
-              src={me}
-              alt='Picture of Ashish'
+              src={dummy}
+              alt='Picture of A person'
             />
             <FileInput />
             <Button variant='secondary'>Remove</Button>
