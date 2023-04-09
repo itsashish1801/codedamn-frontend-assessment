@@ -9,4 +9,5 @@ export interface SidebarLink extends Icon {
 export interface TextLink {
   linkText: string;
   href: string;
+  variant?: 'primary' | 'secondary';
 }

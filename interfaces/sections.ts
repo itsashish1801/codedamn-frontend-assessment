@@ -86,6 +86,7 @@ export interface SectionHeader {
   title: string;
   linkText?: string;
   href?: string;
+  variant?: 'primary' | 'secondary';
 }
 
 export interface Navbar {

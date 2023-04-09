@@ -36,11 +36,13 @@ export function SocialLink({ name, href, image }: SocialLink) {
   );
 }
 
-export function TextLink({ href, linkText }: TextLink) {
+export function TextLink({ href, linkText, variant = 'primary' }: TextLink) {
   return (
     <Link
       href={href}
-      className='font-semibold text-indigo-600 hover:underline focus:outline-none focus:ring-2 focus:ring-indigo-300 focus:ring-offset-1'
+      className={`font-semibold hover:underline focus:outline-none focus:ring-2 focus:ring-indigo-300 focus:ring-offset-1 ${
+        variant === 'primary' ? 'text-indigo-600' : 'text-zinc-500'
+      }`}
     >
       {linkText}
     </Link>

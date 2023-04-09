@@ -6,7 +6,7 @@ import LayoutWithSidebar from '@/layouts/LayoutWithSidebar';
 import { Playground, Project } from '@/interfaces/sections';
 import Error from '@/components/Standalone/Error';
 import { LoadingButton } from '@/components/Standalone/Buttons';
-import Projects from '@/components/Profile/Portfolio/Projects';
+import FormProject from '@/components/Form/FormProject';
 
 function UpdatePortfolio() {
   const fetcher: Fetcher<Project[]> = (url: string) =>
@@ -26,8 +26,8 @@ function UpdatePortfolio() {
     return <Error message='There is no such result matching your query.' />;
 
   return (
-    <form className='px-16 -mt-12'>
-      <Projects projects={projects} />
+    <form className='px-16'>
+      <FormProject projects={projects} />
     </form>
   );
 }
