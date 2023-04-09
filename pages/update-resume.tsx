@@ -7,7 +7,7 @@ import Layout from '@/layouts/Layout';
 import LayoutWithSidebar from '@/layouts/LayoutWithSidebar';
 import Error from '@/components/Standalone/Error';
 import { LoadingButton } from '@/components/Standalone/Buttons';
-import TechSkills from '@/components/Profile/Resume/TechSkills';
+import FormTechSkills from '@/components/Form/FormTechSkills';
 
 function UpdateResume() {
   const fetcher: Fetcher<Technology[]> = (url: string) =>
@@ -27,8 +27,8 @@ function UpdateResume() {
     return <Error message='There is no such result matching your query.' />;
 
   return (
-    <form className='px-16 -mt-12'>
-      <TechSkills techSkills={technologies} />
+    <form className='px-16'>
+      <FormTechSkills techSkills={technologies} />
     </form>
   );
 }
