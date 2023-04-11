@@ -1,6 +1,6 @@
 # Codedamn Frontend Assessment
 
-This is a frontend project built with Next.js, Tailwind CSS, and Strapi for the Codedamn Frontend Assessment.
+This is a frontend project built with Next.js, Tailwind CSS for the Codedamn Frontend Assessment.
 
 ## Description
 
