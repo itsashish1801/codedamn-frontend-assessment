@@ -12,7 +12,7 @@ function SearchBox() {
       onClick={() => {
         inputRef.current?.focus();
       }}
-      className={`w-[23rem] border border-zinc-400 flex items-center cursor-text p-1.5 rounded-lg ${
+      className={`lg:w-[23rem] border border-zinc-400 flex items-center cursor-text p-1.5 rounded-lg ${
         hasFocus ? 'border-zinc-900 ring-1 ring-zinc-600' : ''
       }`}
     >

@@ -10,7 +10,7 @@ import { Button, ButtonIcon } from '../../Standalone/Buttons';
 
 function Header({ user }: { user: User }) {
   return (
-    <section>
+    <header>
       <div className='pb-8 overflow-hidden rounded-2xl ring-1 ring-zinc-200'>
         <Banner
           image={user.profileImage}
@@ -36,7 +36,7 @@ function Header({ user }: { user: User }) {
           </div>
         </div>
       </div>
-    </section>
+    </header>
   );
 }
 

@@ -19,7 +19,13 @@ const BasicDetails = ({
         </h2>
         <div className='flex gap-3'>
           {isPro && <Tag text='Pro' variant='color' color='success' />}
-          {lookingForJob && <Tag text='Looking for job' variant='color' />}
+          {lookingForJob && (
+            <Tag
+              text='Looking for job'
+              variant='color'
+              className='whitespace-nowrap'
+            />
+          )}
         </div>
       </div>
 
