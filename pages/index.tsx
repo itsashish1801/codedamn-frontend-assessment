@@ -10,7 +10,7 @@ export default function Home() {
         <h1 className='text-3xl font-bold'>
           Codedamn Frontend Developer Assignment
         </h1>
-        <div className='grid mt-12 sm:gap-6 md:grid-cols-2'>
+        <div className='grid gap-6 mt-12 md:grid-cols-2'>
           <Link href='/profile' className={baseStyle}>
             Profile page
           </Link>

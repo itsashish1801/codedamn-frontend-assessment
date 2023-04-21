@@ -27,7 +27,7 @@ function UpdateResume() {
     return <Error message='There is no such result matching your query.' />;
 
   return (
-    <form className='px-16'>
+    <form className='md:px-16'>
       <FormTechSkills techSkills={technologies} />
 
       <div className='flex justify-end gap-3 mt-10'>

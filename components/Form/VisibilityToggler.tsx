@@ -9,7 +9,9 @@ function VisibilityToggler({ title, description, label }: VisibilityToggler) {
         <label htmlFor={convertToId(title)} className='font-bold'>
           {title}
         </label>
-        <p className='mt-1 text-sm text-zinc-500'>{description}</p>
+        <p className='max-w-[14rem] md:max-w-max mt-1 text-sm text-zinc-500'>
+          {description}
+        </p>
       </div>
       <Toggler title={title} label={label} />
     </div>

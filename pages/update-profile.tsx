@@ -52,7 +52,7 @@ function UpdateProfile() {
       validationSchema={ProfileFormSchema}
     >
       {({ errors, touched }) => (
-        <Form className='w-full px-16'>
+        <Form className='w-full md:px-16'>
           <div className='flex items-center gap-6'>
             <Image
               width={72}
@@ -108,8 +108,8 @@ function UpdateProfile() {
             />
           </div>
           <div className='mt-10'>
-            <h2 className='text-xl font-bold'>Section Visibility</h2>
-            <p className='mt-1 text-zinc-500'>
+            <h2 className='text-lg font-bold md:text-xl'>Section Visibility</h2>
+            <p className='mt-1 text-sm text-zinc-500'>
               Select which sections and content should show on your profile
               page.
             </p>

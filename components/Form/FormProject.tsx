@@ -15,7 +15,7 @@ function FormProject({ projects }: { projects: Project[] }) {
         variant='secondary'
       />
 
-      <div className='grid grid-cols-2 gap-5 mt-6'>
+      <div className='grid gap-5 mt-6 sm:grid-cols-2'>
         {projects.map((project) => (
           <div key={project.title} className='relative'>
             <input

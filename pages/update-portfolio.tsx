@@ -40,7 +40,7 @@ function UpdatePortfolio() {
     return <Error message='There is no such result matching your query.' />;
 
   return (
-    <form className='px-16'>
+    <form className='md:px-16'>
       <FormPlayground playgrounds={playgrounds} />
       <FormProject projects={projects} />
 

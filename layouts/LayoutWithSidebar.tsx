@@ -3,7 +3,7 @@ import Sidebar from '@/components/Form/Sidebar';
 
 function LayoutWithSidebar({ children }: { children: ReactElement }) {
   return (
-    <div className='flex py-16'>
+    <div className='flex flex-col px-5 py-10 md:py-16 md:px-0 md:flex-row'>
       <Sidebar />
       {children}
     </div>

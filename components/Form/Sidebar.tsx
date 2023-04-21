@@ -25,7 +25,7 @@ function Sidebar() {
 
   return (
     <div>
-      <ul className='inline-flex flex-col flex-shrink-0 gap-3 p-6 overflow-hidden rounded-2xl bg-zinc-50 ring-1 ring-inset ring-zinc-100'>
+      <ul className='flex-col flex-shrink-0 hidden gap-3 p-6 overflow-hidden md:inline-flex rounded-2xl bg-zinc-50 ring-1 ring-inset ring-zinc-100'>
         {paths.map((path) => (
           <li key={path.linkText}>
             <SidebarLink

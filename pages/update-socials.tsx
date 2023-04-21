@@ -53,7 +53,7 @@ function UpdateSocials() {
       }}
     >
       {({ errors, touched }) => (
-        <Form className='w-full px-16'>
+        <Form className='w-full md:px-16'>
           <div className='flex flex-col gap-4'>
             <TextInput
               label='Github'

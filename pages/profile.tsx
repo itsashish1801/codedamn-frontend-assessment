@@ -25,7 +25,7 @@ function Profile() {
     return <Error message='There is no such user matching your query.' />;
 
   return (
-    <div className='max-w-3xl px-5 py-16 mx-auto'>
+    <div className='max-w-3xl px-5 py-24 mx-auto md:px-0'>
       <Header user={user} />
       <Tabs user={user} />
     </div>
