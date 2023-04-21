@@ -12,7 +12,7 @@ const user: User = {
   fullName: 'Ashish Sharma',
   profileImage:
     'https://res.cloudinary.com/dpoftt83y/image/upload/v1680852540/codedamn-frontend-assessment/me_qdv2oy.webp',
-  bio: 'Designer & Frontend Engineer.',
+  bio: 'Designer & Frontend Engineer',
   location: 'Ranchi, India',
   level: 5,
   currentStreak: 10,

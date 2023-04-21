@@ -17,7 +17,7 @@ function Header({ user }: { user: User }) {
           imageAlt={user.fullName}
           level={user.level}
         />
-        <div className='pt-6 pl-48 pr-6 '>
+        <div className='px-4 pt-20 sm:pr-6 sm:pt-6 sm:pl-48 '>
           <BasicDetails
             name={user.fullName}
             bio={user.bio}
@@ -27,9 +27,9 @@ function Header({ user }: { user: User }) {
           />
           <HighlightedSkills skills={user.techSkills} />
 
-          <div className='flex items-center justify-between pt-8 border-t border-zinc-100'>
+          <div className='flex flex-col items-start pt-8 border-t sm:items-center sm:justify-between sm:flex-row border-zinc-100'>
             <SocialLinks socials={user.socialLinks} />
-            <div className='flex items-center gap-4'>
+            <div className='flex items-center gap-4 mt-10 sm:mt-0'>
               <ButtonIcon Icon={BookmarkIcon} />
               <Button>Contact</Button>
             </div>
