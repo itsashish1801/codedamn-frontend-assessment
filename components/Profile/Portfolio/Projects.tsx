@@ -10,7 +10,7 @@ function Projects({ projects }: { projects: Project[] }) {
     <section className='mt-12'>
       <SectionHeader title='Projects' linkText='Create new project' href='#' />
 
-      <div className='grid grid-cols-2 gap-5 mt-6'>
+      <div className='grid gap-5 mt-6 sm:grid-cols-2'>
         {projects.map((project) => (
           <ProjectCard
             key={project.title}

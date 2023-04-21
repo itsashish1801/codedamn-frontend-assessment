@@ -40,7 +40,7 @@ export function TextLink({ href, linkText, variant = 'primary' }: TextLink) {
   return (
     <Link
       href={href}
-      className={`font-semibold hover:underline focus:outline-none focus:ring-2 focus:ring-indigo-300 focus:ring-offset-1 ${
+      className={`font-semibold text-sm sm:text-base hover:underline focus:outline-none focus:ring-2 focus:ring-indigo-300 focus:ring-offset-1 ${
         variant === 'primary' ? 'text-indigo-600' : 'text-zinc-500'
       }`}
     >

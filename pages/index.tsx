@@ -6,11 +6,11 @@ export default function Home() {
 
   return (
     <>
-      <main className='mt-40 text-center'>
+      <main className='px-6 mt-40 text-center'>
         <h1 className='text-3xl font-bold'>
           Codedamn Frontend Developer Assignment
         </h1>
-        <div className='grid grid-cols-2 gap-6 mt-12'>
+        <div className='grid mt-12 sm:gap-6 md:grid-cols-2'>
           <Link href='/profile' className={baseStyle}>
             Profile page
           </Link>

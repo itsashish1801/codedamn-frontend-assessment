@@ -14,7 +14,7 @@ function Playgrounds({ playgrounds }: { playgrounds: Playground[] }) {
         href='#'
       />
 
-      <div className='grid grid-cols-2 gap-5 mt-6'>
+      <div className='grid gap-5 mt-6 sm:grid-cols-2'>
         {playgrounds.map((playground) => (
           <PlaygroundCard
             key={playground.title}

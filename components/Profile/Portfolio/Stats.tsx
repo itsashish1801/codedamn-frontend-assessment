@@ -14,7 +14,7 @@ function Stats({ stats }: { stats: Stats }) {
   return (
     <section className='mt-10'>
       <SectionHeader title='Stats' />
-      <div className='grid grid-cols-2 gap-5 mt-6'>
+      <div className='grid gap-5 mt-6 sm:grid-cols-2'>
         <StatCard
           title={stats.longestStreak}
           subtitle='Longest streak'
