@@ -50,25 +50,27 @@ function WorkExperienceCard({
         className='flex-shrink-0 w-10 h-10 mt-1'
       />
       <div className='ml-4'>
-        <h4 className='text-lg font-semibold'>{role}</h4>
-        <div className='flex items-end justify-between'>
+        <h4 className='font-semibold sm:text-lg'>{role}</h4>
+        <div className='flex flex-col items-start justify-between text-sm sm:flex-row sm:text-base'>
           <div className='flex items-center gap-2 mt-1'>
             <span>{location}</span>
             <div className='w-1 h-1 rounded-full bg-zinc-600' />
             <span>{employer}</span>
           </div>
-          <span className='font-semibold'>{`${formatDate(startDate)} - ${
+          <span className='mt-1 font-semibold'>{`${formatDate(startDate)} - ${
             endDate ? formatDate(endDate) : 'Present'
           }`}</span>
         </div>
-        <p className='mt-6 leading-relaxed text-zinc-500'>{description}</p>
+        <p className='mt-6 -ml-12 leading-relaxed sm:ml-0 text-zinc-500'>
+          {description}
+        </p>
         {responsibilities && responsibilities.length > 1 && (
-          <div className='mt-5'>
+          <div className='mt-5 -ml-12 sm:ml-0'>
             <span className='font-semibold'>Job responsibilities:</span>
-            <ul className='flex flex-col gap-1 mt-2'>
+            <ul className='flex flex-col gap-2 mt-2'>
               {responsibilities.map((responsibility) => (
-                <li className='flex items-center gap-2' key={responsibility}>
-                  <div className='w-2 h-2 rotate-45 bg-indigo-500 rounded-sm' />
+                <li className='flex items-start gap-2' key={responsibility}>
+                  <div className='flex-shrink-0 w-2 h-2 mt-2 rotate-45 bg-indigo-500 rounded-sm' />
                   <span className='text-zinc-500'>{responsibility}</span>
                 </li>
               ))}

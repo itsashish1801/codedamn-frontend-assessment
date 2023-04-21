@@ -12,7 +12,7 @@ const user: User = {
   fullName: 'Ashish Sharma',
   profileImage:
     'https://res.cloudinary.com/dpoftt83y/image/upload/v1680852540/codedamn-frontend-assessment/me_qdv2oy.webp',
-  bio: 'Intrigued being, Designer & Frontend Engineer.',
+  bio: 'Designer & Frontend Engineer.',
   location: 'Ranchi, India',
   level: 5,
   currentStreak: 10,
@@ -38,13 +38,7 @@ const user: User = {
   A self-driven, versatile, reliable, diligent individual who is calm and cheerful with a team-minded approach to work and getting things done.`,
   educations: educations,
   workExperiences: workExperiences,
-  interests: [
-    'Programming',
-    'Design',
-    'Technology',
-    'Travelling',
-    'Philosophy',
-  ],
+  interests: ['Programming', 'Design', 'Science', 'Travelling', 'Philosophy'],
   languages: languages,
   techSkills: technologies,
 };

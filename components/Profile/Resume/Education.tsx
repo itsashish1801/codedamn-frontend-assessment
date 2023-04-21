@@ -48,18 +48,20 @@ function EducationCard({
         className='flex-shrink-0 w-10 h-10 mt-1'
       />
       <div className='ml-4'>
-        <h4 className='text-lg font-semibold'>{institutionName}</h4>
-        <div className='flex items-end justify-between'>
+        <h4 className='font-semibold sm:text-lg'>{institutionName}</h4>
+        <div className='flex flex-col items-start justify-between mt-1 text-sm sm:flex-row sm:text-base'>
           <div className='flex items-center gap-2 mt-1'>
             <span>{institutionLocation}</span>
             <div className='w-1 h-1 rounded-full bg-zinc-600' />
             <span>{degree}</span>
           </div>
-          <span className='font-semibold'>{`${formatDate(startDate)} - ${
-            endDate ? formatDate(endDate) : 'Present'
-          }`}</span>
+          <span className='mt-1 font-semibold sm:mt-0'>{`${formatDate(
+            startDate
+          )} - ${endDate ? formatDate(endDate) : 'Present'}`}</span>
         </div>
-        <p className='mt-6 leading-relaxed text-zinc-500'>{description}</p>
+        <p className='mt-6 -ml-12 leading-relaxed sm:ml-0 text-zinc-500'>
+          {description}
+        </p>
       </div>
     </div>
   );

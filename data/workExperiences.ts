@@ -3,7 +3,7 @@ import { WorkExperience } from '@/interfaces/sections';
 const workExperiences: WorkExperience[] = [
   {
     role: 'Design Fellow at Headstart',
-    employer: 'Headstart Network Foundation',
+    employer: 'Headstart Foundation',
     employerImage:
       'https://res.cloudinary.com/dpoftt83y/image/upload/v1680852539/codedamn-frontend-assessment/headstart_jqv59t.png',
     location: 'Bengaluru',

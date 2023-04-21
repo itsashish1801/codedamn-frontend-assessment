@@ -23,7 +23,7 @@ const certificates: Certificate[] = [
   },
   {
     title: 'React JS Mastery',
-    issuedOn: '18/01/2023',
+    issuedOn: '09/16/2022',
     href: '#',
     technology: technologies.at(3)!,
   },

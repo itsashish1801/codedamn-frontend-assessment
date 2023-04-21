@@ -7,7 +7,7 @@ import { CategoryTag } from '@/components/Standalone/Tags';
 
 function Projects({ projects }: { projects: Project[] }) {
   return (
-    <section className='mt-12'>
+    <section className='mt-16 md:mt-12'>
       <SectionHeader title='Projects' linkText='Create new project' href='#' />
 
       <div className='grid gap-5 mt-6 sm:grid-cols-2'>

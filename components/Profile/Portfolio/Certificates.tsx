@@ -8,7 +8,7 @@ import SectionHeader from '@/components/Standalone/SectionHeader';
 
 function Certificates({ certificates }: { certificates: Certificate[] }) {
   return (
-    <section className='mt-12'>
+    <section className='mt-16 md:mt-12'>
       <SectionHeader
         title='Certificates'
         linkText='Add new certificate'

@@ -7,7 +7,7 @@ import SectionHeader from '@/components/Standalone/SectionHeader';
 
 function Playgrounds({ playgrounds }: { playgrounds: Playground[] }) {
   return (
-    <section className='mt-12'>
+    <section className='mt-16 md:mt-12'>
       <SectionHeader
         title='Playgrounds'
         linkText='Create new playground'
