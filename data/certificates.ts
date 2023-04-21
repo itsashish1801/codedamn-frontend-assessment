@@ -17,13 +17,13 @@ const certificates: Certificate[] = [
   },
   {
     title: 'HTML/CSS Mastery',
-    issuedOn: '09/06/2022',
+    issuedOn: '03/06/2022',
     href: '#',
     technology: technologies.at(0)!,
   },
   {
     title: 'React JS Mastery',
-    issuedOn: '09/16/2022',
+    issuedOn: '02/16/2022',
     href: '#',
     technology: technologies.at(3)!,
   },

@@ -13,7 +13,7 @@ function SearchBox() {
         inputRef.current?.focus();
       }}
       className={`lg:w-[23rem] border border-zinc-400 flex items-center cursor-text p-1.5 rounded-lg ${
-        hasFocus ? 'border-zinc-900 ring-1 ring-zinc-600' : ''
+        hasFocus ? 'border-zinc-500 ring-1 ring-zinc-500' : ''
       }`}
     >
       <MagnifyingGlassIcon className='w-4 h-4 ml-2 outline-none stroke-2 text-zinc-500' />
