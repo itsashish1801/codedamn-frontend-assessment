@@ -1,31 +1,32 @@
 import { ReactElement } from 'react';
-import useSWR, { Fetcher, preload } from 'swr';
 
 import { Technology } from '@/interfaces/sections';
 
 import Layout from '@/layouts/Layout';
 import LayoutWithSidebar from '@/layouts/LayoutWithSidebar';
-import Error from '@/components/Standalone/Error';
-import { Button, LoadingButton } from '@/components/Standalone/Buttons';
+
+import { Button } from '@/components/Standalone/Buttons';
 import FormTechSkills from '@/components/Form/FormTechSkills';
+import { GetStaticProps, InferGetStaticPropsType } from 'next';
 
-function UpdateResume() {
-  const fetcher: Fetcher<Technology[]> = (url: string) =>
-    fetch(url).then((res) => res.json());
+export const getStaticProps: GetStaticProps<{
+  technologies: Technology[];
+}> = async () => {
+  const res = await fetch(
+    'https://codedamn-frontend-assessment.vercel.app/api/user/tech-skills'
+  );
+  const technologies: Technology[] = await res.json();
 
-  preload('/api/user/tech-skills', fetcher);
+  return {
+    props: {
+      technologies,
+    },
+  };
+};
 
-  const {
-    data: technologies,
-    error,
-    isLoading,
-  } = useSWR<Technology[], Error>('/api/user/tech-skills', fetcher);
-
-  if (error) return <Error message={error.message} />;
-  if (isLoading) return <LoadingButton />;
-  if (!technologies)
-    return <Error message='There is no such result matching your query.' />;
-
+function UpdateResume({
+  technologies,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <form className='md:px-16'>
       <FormTechSkills techSkills={technologies} />
