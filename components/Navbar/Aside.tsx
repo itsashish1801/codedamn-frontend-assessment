@@ -24,7 +24,7 @@ function Aside() {
                 fill='currentColor'
                 strokeWidth='0'
                 viewBox='0 0 24 24'
-                className='w-6 h-6'
+                className='w-6 h-6 rotate-180'
                 height='1em'
                 width='1em'
                 xmlns='http://www.w3.org/2000/svg'
@@ -35,18 +35,18 @@ function Aside() {
             </Popover.Button>
             <Transition
               as={Fragment}
-              enter='transition ease-out duration-500'
+              enter='transition ease-out duration-300'
               enterFrom='opacity-0 -translate-x-full'
               enterTo='opacity-100 translate-x-0'
-              leave='transition ease-in duration-500'
+              leave='transition ease-in duration-300'
               leaveFrom='opacity-100 translate-x-0'
               leaveTo='opacity-0 -translate-x-full'
             >
               <Popover.Panel
                 as='aside'
-                className='fixed inset-0 z-50 w-full h-screen px-4 py-3 overflow-hidden bg-white'
+                className='fixed inset-0 z-50 w-full h-screen px-4 py-3 overflow-hidden bg-zinc-50'
               >
-                <Popover.Button className='inline-flex items-center justify-center flex-shrink-0 p-2 md:hidden'>
+                <Popover.Button className='inline-flex items-center justify-center flex-shrink-0 p-2 mt-1.5 md:hidden'>
                   <span className='sr-only'>Close Menu</span>
                   <svg
                     stroke='currentColor'

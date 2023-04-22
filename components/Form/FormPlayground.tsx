@@ -14,7 +14,7 @@ function FormPlayground({ playgrounds }: { playgrounds: Playground[] }) {
         variant='secondary'
       />
 
-      <div className='grid gap-5 mt-6 sm:grid-cols-2'>
+      <div className='grid gap-5 mt-6 lg:grid-cols-2'>
         {playgrounds.map((playground) => (
           <div key={playground.title} className='relative'>
             <input

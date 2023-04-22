@@ -17,6 +17,12 @@ export const getStaticProps: GetStaticProps<{
   );
   const technologies: Technology[] = await res.json();
 
+  if (!res.ok) {
+    throw new Error(
+      `Failed to fetch tech-skills, received status ${res.status}`
+    );
+  }
+
   return {
     props: {
       technologies,

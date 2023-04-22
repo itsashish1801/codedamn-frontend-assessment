@@ -34,9 +34,12 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   };
 };
 
-function UpdatePortfolio({ playgrounds, projects }: InferGetStaticPropsType<typeof getStaticProps>) {
+function UpdatePortfolio({
+  playgrounds,
+  projects,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
-    <form className='md:px-16'>
+    <form className='w-full md:px-16'>
       <FormPlayground playgrounds={playgrounds} />
       <FormProject projects={projects} />
 
