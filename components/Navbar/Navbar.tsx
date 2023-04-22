@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import Link from 'next/link';
 
 import { Navbar } from '@/interfaces/sections';
@@ -16,35 +15,11 @@ function Navbar({
   imageAlt,
   level,
 }: Navbar) {
-  const [showAside, setShowAside] = useState(false);
-
-  function closeAside() {
-    setShowAside(false);
-  }
-
   return (
     <>
       <nav className='sticky top-0 z-50 flex items-center justify-between w-full py-3 pl-4 pr-6 bg-white bg-opacity-90 backdrop-blur-sm lg:px-0'>
         <div className='flex'>
-          <button
-            onClick={() => setShowAside(true)}
-            className='inline-flex items-center justify-center flex-shrink-0 p-2 md:hidden'
-          >
-            <span className='sr-only'>Open Menu</span>
-            <svg
-              stroke='currentColor'
-              fill='currentColor'
-              strokeWidth='0'
-              viewBox='0 0 24 24'
-              className='w-6 h-6 rotate-180'
-              height='1em'
-              width='1em'
-              xmlns='http://www.w3.org/2000/svg'
-            >
-              <path fill='none' d='M0 0h24v24H0V0z'></path>
-              <path d='M3 18h13v-2H3v2zm0-5h10v-2H3v2zm0-7v2h13V6H3zm18 9.59L17.42 12 21 8.41 19.59 7l-5 5 5 5L21 15.59z'></path>
-            </svg>
-          </button>
+          <Aside />
           <Link href='/' className='flex items-center gap-1'>
             <svg
               xmlnsXlink='http://www.w3.org/1999/xlink'
@@ -117,7 +92,6 @@ function Navbar({
           />
         </div>
       </nav>
-      {showAside && <Aside closeAside={closeAside} />}
     </>
   );
 }
