@@ -17,7 +17,6 @@ type AppPropsWithLayout = AppProps & {
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
-  preload: true,
 });
 
 export default function App({ Component, pageProps }: AppPropsWithLayout) {

@@ -5,8 +5,14 @@ import User from '@/interfaces/user';
 
 import Header from '@/components/Profile/Header/Header';
 import Tabs from '@/components/Profile/Header/Tabs';
+import { useRouter } from 'next/router';
 
-export const getStaticProps: GetStaticProps<{ user: User }> = async () => {
+interface Props {
+  user: User;
+  timeStamp: string;
+}
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
   const res = await fetch(
     'https://codedamn-frontend-assessment.vercel.app/api/user'
   );
@@ -15,13 +21,36 @@ export const getStaticProps: GetStaticProps<{ user: User }> = async () => {
   return {
     props: {
       user,
+      timeStamp: new Date().toUTCString(),
     },
   };
 };
 
-function Profile({ user }: InferGetStaticPropsType<typeof getStaticProps>) {
+function Profile({
+  user,
+  timeStamp,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
+  const router = useRouter();
+
+  const revalidate = async () => {
+    await fetch(`/api/revalidate?secret=thisisasecret`);
+    router.reload();
+  };
+
   return (
     <div className='max-w-3xl px-5 py-24 mx-auto lg:px-0'>
+      <div className='flex items-center justify-between gap-4 pb-8'>
+        <span>
+          You are seeing the page last updated on{' '}
+          <span className='font-semibold'>{timeStamp}</span>
+        </span>
+        <button
+          className='font-semibold text-white bg-red-600 rounded-md py-1.5 px-4  hover:bg-red-700 text-sm'
+          onClick={revalidate}
+        >
+          Revalidate
+        </button>
+      </div>
       <Header user={user} />
       <Tabs user={user} />
     </div>
