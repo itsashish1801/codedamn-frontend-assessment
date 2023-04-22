@@ -7,7 +7,9 @@ import Header from '@/components/Profile/Header/Header';
 import Tabs from '@/components/Profile/Header/Tabs';
 
 export const getStaticProps: GetStaticProps<{ user: User }> = async () => {
-  const res = await fetch('http://localhost:3000/api/user');
+  const res = await fetch(
+    'https://codedamn-frontend-assessment.vercel.app/api/user'
+  );
   const user: User = await res.json();
 
   return {

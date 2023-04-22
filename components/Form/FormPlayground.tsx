@@ -27,7 +27,7 @@ function FormPlayground({ playgrounds }: { playgrounds: Playground[] }) {
             </div>
             <label
               htmlFor={convertToId(playground.title)}
-              className='inline-block rounded-lg peer-checked:ring-2 peer-checked:ring-indigo-600'
+              className='inline-block w-full rounded-lg peer-checked:ring-2 peer-checked:ring-indigo-600'
             >
               <PlaygroundCard
                 key={playground.title}
