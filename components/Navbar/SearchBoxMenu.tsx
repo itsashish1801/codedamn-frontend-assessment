@@ -19,7 +19,7 @@ function SearchBoxMenu() {
 
   return (
     <div>
-      <Menu as='div' className='relative inline-block text-left'>
+      <Menu as='div' className='relative inline-block mr-2 text-left md:mr-0'>
         <div>
           <Menu.Button className='inline-flex items-center w-full px-2 py-1 text-sm rounded-lg group bg-zinc-100 text-zinc-600 hover:bg-zinc-200 hover:text-zinc-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-zinc-500'>
             {selectedItem}
